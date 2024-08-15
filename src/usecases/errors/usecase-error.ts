@@ -1,3 +1,0 @@
-interface UsecaseError {
-  message: string
-}

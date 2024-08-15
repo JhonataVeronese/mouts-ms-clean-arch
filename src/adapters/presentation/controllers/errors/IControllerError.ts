@@ -1,0 +1,3 @@
+interface IControllerError {
+  message: string;
+}
