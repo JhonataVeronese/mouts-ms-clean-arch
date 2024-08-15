@@ -1,11 +1,11 @@
-import { UserDataDTO } from "../../entities/User/UserDataDTO";
-import { left, right, Either } from "../../shared/either";
-import { IRegisterUser } from "./IRegisterUser";
-import { RegisterUserResponse } from "./RegisterUserResponse";
 import { IUserRepository } from "../interface/IUserRepository";
-import { User } from "../../entities/User/User";
-import { InvalidNameError } from "../../entities/user/errors/invalid-name";
-import { InvalidEmailError } from "../../entities/user/errors/invalid-email";
+import { IRegisterUser } from "./IRegisterUser";
+import { Either, left, right } from "@shared/either";
+import { InvalidNameError } from "@entities/user/errors/InvalidNameError";
+import { InvalidEmailError } from "@entities/user/errors/InvalidEmailError";
+import { UserDataDTO } from "@entities/user/UserDataDTO";
+import { User } from "@entities/user/User";
+import { RegisterUserResponse } from "./RegisterUserResponse";
 
 export class RegisterUserOnMailingListUseCase implements IRegisterUser {
   private readonly userRepository: IUserRepository;
@@ -14,9 +14,7 @@ export class RegisterUserOnMailingListUseCase implements IRegisterUser {
     this.userRepository = userRepo;
   }
 
-  async registerUserOnMailingListUseCase(
-    userData: UserDataDTO
-  ): Promise<RegisterUserResponse> {
+  async execute(userData: UserDataDTO): Promise<RegisterUserResponse> {
     const userOrError: Either<InvalidNameError | InvalidEmailError, User> =
       User.create(userData);
 
@@ -25,6 +23,7 @@ export class RegisterUserOnMailingListUseCase implements IRegisterUser {
     }
 
     const user: User = userOrError.value;
+
     const exists = await this.userRepository.exists(user.email.value);
     if (!exists.valueOf()) {
       await this.userRepository.add({

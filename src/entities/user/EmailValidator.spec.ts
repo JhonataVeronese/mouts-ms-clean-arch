@@ -1,4 +1,4 @@
-import { Email } from "./email";
+import { Email } from "./Email";
 
 describe("Email validator", () => {
   test("Should accept valid email (valid classes)", () => {

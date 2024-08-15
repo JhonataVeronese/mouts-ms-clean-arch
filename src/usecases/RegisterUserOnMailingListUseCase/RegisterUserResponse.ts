@@ -1,7 +1,7 @@
-import { Either } from "../../shared/either";
-import { InvalidEmailError } from "../../entities/User/errors/invalid-email";
-import { InvalidNameError } from "../../entities/User/errors/invalid-name";
-import { UserDataDTO } from "../../entities/User/UserDataDTO";
+import { Either } from "@shared/either";
+import { UserDataDTO } from "@entities/user/UserDataDTO";
+import { InvalidNameError } from "@entities/user/errors/InvalidNameError";
+import { InvalidEmailError } from "@entities/user/errors/InvalidEmailError";
 
 export type RegisterUserResponse = Either<
   InvalidNameError | InvalidEmailError,

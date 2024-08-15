@@ -1,4 +1,4 @@
-import { UserDataDTO } from "../../../entities/User/UserDataDTO";
+import { UserDataDTO } from "../../../entities/user/UserDataDTO";
 import { MongoHelper } from "./helpers/mongo-helper";
 import { IUserRepository } from "../../../usecases/interface/IUserRepository";
 

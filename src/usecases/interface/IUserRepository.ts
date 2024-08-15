@@ -1,4 +1,4 @@
-import { UserDataDTO } from "../../entities/User/UserDataDTO";
+import { UserDataDTO } from "../../entities/user/UserDataDTO";
 
 export interface IUserRepository {
   findAllUsers: () => Promise<UserDataDTO[]>;

@@ -1,3 +1,7 @@
+import { NodemailerEmailService } from "./NodemailerEmailService";
+import { MailServiceError } from "../../usecases/errors/MailServiceError";
+import { IEmailOptions } from "../../usecases/interface/IEmailService";
+
 const makeSut = (): NodemailerEmailService => {
   return new NodemailerEmailService();
 };

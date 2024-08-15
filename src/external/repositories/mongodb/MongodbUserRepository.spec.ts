@@ -1,5 +1,5 @@
 import { MongoHelper } from "./helpers/mongo-helper";
-import { MongodbUserRepository } from "./mongodb-user-repository";
+import { MongodbUserRepository } from "./MongodbUserRepository";
 
 describe("Mongodb User repository", () => {
   beforeAll(async () => {

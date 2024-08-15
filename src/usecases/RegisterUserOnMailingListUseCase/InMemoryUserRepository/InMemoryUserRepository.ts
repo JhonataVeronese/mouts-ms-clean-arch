@@ -1,7 +1,7 @@
-import { UserRepository } from "../../ports/user-repository";
-import { UserDataDTO } from "../../../entities/User/UserDataDTO";
+import { UserDataDTO } from "../../../entities/user/UserDataDTO";
+import { IUserRepository } from "@usecases/interface/IUserRepository";
 
-export class InMemoryUserRepository implements UserRepository {
+export class InMemoryUserRepository implements IUserRepository {
   users: UserDataDTO[] = [];
   constructor(users: UserDataDTO[]) {
     this.users = users;

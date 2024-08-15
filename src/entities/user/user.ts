@@ -1,9 +1,9 @@
-import { InvalidEmailError } from "./errors/invalid-email";
-import { Either, left, right } from "../../shared/either";
-import { InvalidNameError } from "./errors/invalid-name";
 import { Name } from "./Name";
 import { Email } from "./Email";
 import { UserDataDTO } from "./UserDataDTO";
+import { Either, left, right } from "@shared/either";
+import { InvalidNameError } from "./errors/InvalidNameError";
+import { InvalidEmailError } from "./errors/InvalidEmailError";
 
 export class User {
   public readonly name: Name;

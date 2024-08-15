@@ -1,5 +1,5 @@
 import { RegisterUserController } from "../../../adapters/presentation/controllers/RegisterUserController";
-import { RegisterUserOnMailingListUseCase } from "../../../usecases/RegisterUserOnMailingListUseCase/RegisterUserOnMailingListUseCase";
+import { RegisterUserOnMailingListUseCase } from "../../../usecases/registerUserOnMailingListUseCase/RegisterUserOnMailingListUseCase";
 import { MongodbUserRepository } from "../../../external/repositories/mongodb/MongodbUserRepository";
 
 export const makeRegisterUserController = (): RegisterUserController => {

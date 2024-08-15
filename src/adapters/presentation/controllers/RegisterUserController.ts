@@ -1,8 +1,8 @@
 import { IHttpRequest, IHttpResponse } from "./interface/http";
 import { MissingParamError } from "./errors/MissingParamError";
 import { badRequest, serverError, ok } from "./helpers/HttpHelper";
-import { IRegisterUser } from "../../../usecases/RegisterUserOnMailingListUseCase/IRegisterUser";
-import { RegisterUserResponse } from "../../../usecases/RegisterUserOnMailingListUseCase/RegisterUserResponse";
+import { IRegisterUser } from "../../../usecases/registerUserOnMailingListUseCase/IRegisterUser";
+import { RegisterUserResponse } from "../../../usecases/registerUserOnMailingListUseCase/RegisterUserResponse";
 
 export class RegisterUserController {
   private readonly registerUser: IRegisterUser;
