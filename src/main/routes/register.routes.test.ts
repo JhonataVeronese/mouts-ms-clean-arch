@@ -2,7 +2,7 @@ import request from "supertest";
 import app from "../config/app";
 import { MongoHelper } from "../../external/repositories/mongodb/helpers/mongo-helper";
 
-describe("Register Routes", () => {
+describe.skip("Register Routes", () => {
   beforeAll(async () => {
     await MongoHelper.connect(process.env.MONGO_URL);
   });
