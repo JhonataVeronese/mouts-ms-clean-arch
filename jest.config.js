@@ -1,18 +1,28 @@
+/*
+ * For a detailed explanation regarding each configuration property, visit:
+ * https://jestjs.io/docs/configuration
+ */
+
 module.exports = {
-  roots: ['<rootDir>/src'],
-  collectCoverageFrom: [
-    '<rootDir>/src/**/*.ts',
-    '!<rootDir>/src/main/**',
-    '!<rootDir>/src/**/*-ports.ts',
-    '!**/ports/**',
-    '!**/test/**',
-    '!**/config/**'
-  ],
-  coverageDirectory: 'coverage',
-  testEnvironment: 'node',
   transform: {
-    '.+\\.ts$': 'ts-jest'
+    "^.+.(t|j)sx?$": ["@swc/jest"],
   },
-  preset: '@shelf/jest-mongodb',
-  setupFiles: ['dotenv/config']
-}
+  extensionsToTreatAsEsm: [".ts", ".tsx"],
+  collectCoverage: true,
+  collectCoverageFrom: [
+    "src/**/*.ts",
+    "!src/**/index.ts",
+    "!src/**/I**.ts",
+    "!src/**/server.ts",
+    "!src/**/app.ts",
+  ],
+  coveragePathIgnorePatterns: [
+    "module/user/dto",
+    "infra/db/prisma",
+    "infra/http/factories",
+    "infra/http/routes",
+  ],
+  coverageDirectory: "coverage",
+  coverageProvider: "v8",
+  testMatch: ["**/*.spec.ts", "**/*.test.ts", "**/*.steps.ts"],
+};
