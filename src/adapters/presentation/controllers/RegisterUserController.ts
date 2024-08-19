@@ -24,7 +24,7 @@ export class RegisterUserController {
       };
 
       const registerUserResponse: RegisterUserResponse =
-        await this.registerUser.registerUserOnMailingListUseCase(userData);
+        await this.registerUser.execute(userData);
       if (registerUserResponse.isLeft()) {
         return badRequest(registerUserResponse.value);
       }
